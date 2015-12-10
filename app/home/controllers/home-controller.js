@@ -6,6 +6,8 @@
 
     app.controller('homeController', homeController);
 
+    homeController.$inject =[homeFactory];
+
     function homeController(homeFactory) {
         var home = this;
         homeFactory.getFoodtrucks()
