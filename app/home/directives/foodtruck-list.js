@@ -1,4 +1,4 @@
-(function() {
+/*(function() {
     'use strict';
 
     var app = angular
@@ -20,6 +20,8 @@
         };
     }
 
+    foodtruckListController.$inject =[homeFactory];
+
 
     function foodtruckListController(homeFactory) {
         var foodtrucklist = this;
@@ -34,4 +36,4 @@
         }
     }
 
-})();
+})();*/
