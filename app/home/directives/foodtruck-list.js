@@ -6,6 +6,8 @@
 
     app.directive('foodtruckList', foodtruckList(homeFactory));
 
+    foodtruckList.$inject =['homeFactory'];
+
     function foodtruckList(homeFactory) {
         return {
             restrict: 'EA',
