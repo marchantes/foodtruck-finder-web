@@ -2,31 +2,25 @@
     'use strict';
 
     var app = angular
-        .module('BevybarApp');
+        .module('foodtruckers');
 
     app.factory('homeFactory', homeFactory);
 
     function homeFactory ($q, $http, $location) {
-        var exports = {};
+        var data = {};
 
-        exports.getBeers = getBeers;
-        exports.getPacks = getPacks;
+        data.getFoodtrucks = getFoodtrucks;
 
-        function getBeers() {
-            return $http.get('http://localhost:8000/api/v1/productbase')
+        function getFoodtrucks() {
+            return $http.get('http://kulturyuxta.com/api/v1/foodtrucks/?format=json')
                 .error(errorMessage);
         }
 
-        function getPacks() {
-            return $http.get('http://localhost:8000/api/v1/package')
-                .error(errorMessage);
+        function errorMessage(response) {
+            console.log('There was an error', response);
         }
 
-        function errorMessage(data) {
-            console.log('There was an error', data);
-        }
-
-        return exports;
+        return data;
     }
 
 })();

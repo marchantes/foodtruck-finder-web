@@ -2,28 +2,19 @@
     'use strict';
 
     var app = angular
-        .module('BevybarApp');
+        .module('foodtruckers');
 
     app.controller('homeController', homeController);
 
     function homeController(homeFactory) {
         var home = this;
-        homeFactory.getBeers()
-            .success(beersSuccess);
+        homeFactory.getFoodtrucks()
+            .success(success);
 
-        homeFactory.getPacks()
-            .success(packsSuccess);
-
-        function beersSuccess(jsonData, statusCode) {
+        function success(jsonData, statusCode) {
             console.log('The request was successful', statusCode);
             console.dir(jsonData);
-            home.beers = jsonData;
-        }
-
-        function packsSuccess(jsonData, statusCode) {
-            console.log('The request was successful', statusCode);
-            console.dir(jsonData);
-            home.packs = jsonData;
+            home.foodtrucks = jsonData;
         }
     }
 })();
