@@ -12,7 +12,7 @@
         data.getFoodtrucks = getFoodtrucks;
 
         function getFoodtrucks() {
-            return $http.get('http://kulturyuxta.com/api/v1/foodtrucks/?format=json')
+            return $http.get('http://localhost:8000/api/v1/foodtrucks/?format=json')
                 .error(errorMessage);
         }
 
