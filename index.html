@@ -9,12 +9,35 @@
 </head>
 <body>
 
-<header class="hidden-xs">
+<header>
+    <nav class="topheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 logo">
+                    <a href="/#!/"><img src="assets/img/icon_512.png">Foodtruck Finder</a>
+                </div>
+                <div class="col-lg-9 menu">
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <div class="content" ng-view></div>
 
 <footer>
+    <div class="subfooter">
+        <div class="row">
+            <div class="copyright col-lg-12 text-center">
+                <p>© marchantes</p>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <!-- Vendor libraries -->
@@ -22,6 +45,7 @@
 <script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/angular.js"></script>
 <script type="text/javascript" src="lib/angular-route.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- Application Files -->
 <script type="text/javascript" src="app/app.js"></script>
 <script type="text/javascript" src="app/routes.js"></script>
