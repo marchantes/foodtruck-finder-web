@@ -20,8 +20,7 @@
 
 .subfooter .copyright {
   margin-top: 10px;
-  font-size: 20px;
-  font-weight: bold; }
+  font-size: 18px; }
 
 #map {
   height: 400px; }
@@ -41,10 +40,23 @@
 .list li {
   background-color: #FFECB3; }
 
+.list li a:link, a:visited, a:hover, a:active {
+  color: slategrey; }
+
 .list .title {
   font-size: 30px; }
 
 .list .attribute {
+  font-weight: bold; }
+
+.modal .comments {
+  list-style-type: none; }
+
+.comments .text {
+  font-style: italic;
+  font-size: 18px; }
+
+.comments .user {
   font-weight: bold; }
 
 /*# sourceMappingURL=styles.css.map */

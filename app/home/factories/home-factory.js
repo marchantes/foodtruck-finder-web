@@ -10,9 +10,15 @@
         var data = {};
 
         data.getFoodtrucks = getFoodtrucks;
+        data.getComments = getComments;
 
         function getFoodtrucks() {
-            return $http.get('http://localhost:8000/api/v1/foodtrucks/?format=json')
+            return $http.get('http://kulturyuxta.com/api/v1/foodtrucks/?format=json')
+                .error(errorMessage);
+        }
+
+        function getComments(id) {
+            return $http.get('http://kulturyuxta.com/api/v1/foodtrucks/'+id+'/comments/?format=json')
                 .error(errorMessage);
         }
 

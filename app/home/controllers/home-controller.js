@@ -12,9 +12,20 @@
         var home = this;
 
         home.foodtrucks = null;
+        home.comments = null;
+        home.callCommentsModal = callCommentsModal;
 
         homeFactory.getFoodtrucks()
             .success(success);
+
+        function callCommentsModal(id){
+            homeFactory.getComments(id).success(commentsSuccess);
+
+            function commentsSuccess(jsonData, statusCode) {
+                home.comments = jsonData;
+                console.log(home.comments);
+            }
+        }
 
         function success(jsonData, statusCode) {
             console.log('The request was successful', statusCode);
@@ -33,9 +44,10 @@
 
                 home.foodtrucks.forEach(function(foodtruck) {
                     console.log(foodtruck);
+
                     var contentString = '<div class="infowindow">'+
                         '<div class="title"><h2>'+foodtruck.name+'</h2></div>'+
-                        '<div class="content">'+
+                        '<div>'+
                         '<div class="type"><p><span class="attribute">Tipo: </span>'+foodtruck.food_type+'</p></div>'+
                         '<div class="price"><p><span class="attribute">Precio: </span>'+foodtruck.price+'</p></div>'+
                         '<div class="rating"><p><span class="attribute">Rating: </span>'+foodtruck.rating+'</p></div>'+
@@ -59,23 +71,6 @@
                         infowindow.open(map, marker);
                     });
                 });
-
-                /*var contentString = '<div id="content">'+home.foodtrucks[0].name+'</div>';
-
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(19.388521, -99.172567),
-                    animation: google.maps.Animation.DROP,
-                    map: map,
-                    title:"Hello World!"
-                });
-
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });*/
             }
             google.maps.event.addDomListener(window, 'load', initialize);
 
