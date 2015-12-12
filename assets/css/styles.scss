@@ -1,0 +1,62 @@
+.topheader {
+  height: 50px;
+  background-color: #FFA000;
+}
+
+.topheader .logo img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.topheader .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.topheader .logo a:link, a:visited, a:hover, a:active{
+  color: #FFECB3;
+  text-decoration: none;
+}
+
+.subfooter {
+  height: 50px;
+  background-color: #FFA000;
+}
+
+.subfooter .copyright {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#map {
+  height: 400px;
+}
+
+.infowindow .title {
+  font-size: 30px;
+}
+
+.infowindow .attribute {
+  font-weight: bold;
+}
+
+.content {
+  background-color: #FFC107;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list li{
+  background-color: #FFECB3;
+}
+
+.list .title {
+  font-size: 30px;
+}
+
+.list .attribute {
+  font-weight: bold;
+}

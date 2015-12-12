@@ -1,10 +1,23 @@
 <section>
-    <foodtruck-list></foodtruck-list>
-    <ul>
-        <li ng-repeat="foodtruck in home.foodtrucks">
-            {{foodtruck.name}}
-        </li>
-    </ul>
-    ddscds
+
+    <div id="map" class="container-fluid"></div>
+
+    <div class="container">
+        <div class="row">
+            <ul class="list">
+                <li class="col-lg-4" ng-repeat="foodtruck in home.foodtrucks">
+
+                    <div class="title"><h2>{{foodtruck.name}}</h2></div>
+                    <div>
+                        <div class="type"><p><span class="attribute">Tipo: </span>{{foodtruck.food_type}}</p></div>
+                        <div class="price"><p><span class="attribute">Precio: </span>{{foodtruck.price}}</p></div>
+                        <div class="rating"><p><span class="attribute">Rating: </span>{{foodtruck.rating}}</p></div>
+                        <div class="col-lg-6 facebook"><p><span class="attribute"><a href="foodtruck.facebook">Facebook</a></span></p></div>
+                        <div class="col-lg-6 twitter"><p><span class="attribute"><a href="foodtruck.twitter">Twitter</a></span></p></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
 
