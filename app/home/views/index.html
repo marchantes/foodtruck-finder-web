@@ -1,7 +1,8 @@
 <section>
 
     <div id="map" class="container-fluid"></div>
-
+</section>
+<section>
     <div class="container">
         <div class="row">
             <ul class="list">
@@ -12,6 +13,7 @@
                         <div class="type"><p><span class="attribute">Tipo: </span>{{foodtruck.food_type}}</p></div>
                         <div class="price"><p><span class="attribute">Precio: </span>{{foodtruck.price}}</p></div>
                         <div class="rating"><p><span class="attribute">Rating: </span>{{foodtruck.rating}}</p></div>
+                        <div class="comments"><p><span class="attribute"><a href="" ng-click="home.callCommentsModal(foodtruck.id)" data-toggle="modal" data-target="#comments-modal">Comments</a></span></p></div>
                         <div class="col-lg-6 facebook"><p><span class="attribute"><a href="foodtruck.facebook">Facebook</a></span></p></div>
                         <div class="col-lg-6 twitter"><p><span class="attribute"><a href="foodtruck.twitter">Twitter</a></span></p></div>
                     </div>
@@ -20,4 +22,45 @@
         </div>
     </div>
 </section>
+<div class="modal fade" id="comments-modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Comments</h4>
+            </div>
+            <div class="modal-body">
+
+                <ul class="comments">
+                    <li ng-repeat="comment in home.comments">
+                        <div class="row">
+                            <div class="col-lg-12 text">
+                                <p>"{{comment.comment}}"</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 likes">
+                                <p>Likes: {{comment.likes}}</p>
+                            </div>
+                            <div class="col-lg-5 user">
+                                <p>{{comment.user}}</p>
+                            </div>
+                            <div class="col-lg-4 date">
+                                <p>{{comment.date_added}}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
